@@ -22,7 +22,7 @@ p.init = function (success) {
 
 	this.success = success;
 
-	this.canvas = new Canvas(960, 400);
+	this.canvas = Canvas.createCanvas(960, 400);
 	this.stage = new createjs.Stage(this.canvas);
 
 	this.index = 0;

@@ -37,12 +37,12 @@ exports.Captcha = Captcha;
 var p = Captcha.prototype = {};
 
 p.init = function (seed) {
-	var canvas = new Canvas();
+	var canvas = Canvas.createCanvas();
 	var ctx = canvas.getContext('2d');
 
 	Rnd.setSeed(seed);
 
-	var c = new Canvas(175, 75);
+	var c = Canvas.createCanvas(175, 75);
 	var ctx = c.getContext('2d');
 	var stage = new createjs.Stage(c);
 

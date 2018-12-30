@@ -12,7 +12,7 @@ var p = GraphicsTest.prototype = {};
 exports.GraphicsTest = GraphicsTest;
 
 p.init = function () {
-	this.canvas = new Canvas(1042, 400);
+	this.canvas = Canvas.createCanvas(1042, 400);
 
 	// create a new stage and point it at our canvas:
 	this.stage = new createjs.Stage(this.canvas);
@@ -21,7 +21,7 @@ p.init = function () {
 	this.w = this.canvas.width;
 	this.h = this.canvas.height;
 
-	this.img = new Image();
+	this.img = new Canvas.Image();
 	this.img.src = fs.readFileSync(__dirname + '/img/daisy.png');
 
 	this.layout();

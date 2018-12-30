@@ -18,7 +18,7 @@ p.init = function () {
 	this.images = {};
 	var lib = {};
 
-	var canvas = new Canvas(1024, 2048);
+	var canvas = Canvas.createCanvas(1024, 2048);
 	var stage = new createjs.Stage(canvas);
 
 	gunnertron(lib, {}, createjs);

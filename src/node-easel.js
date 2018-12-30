@@ -30,14 +30,14 @@ var Image = Canvas.Image;
  * Its currently only used for MouseEvent, so its not needed on the server.
  *
  */
-Canvas.prototype.addEventListener = function () { };
+Canvas.Canvas.prototype.addEventListener = function () { };
 
 /**
  * Inject a window object
  *
  * @type {Object}
  */
-window = { addEventListener:function () { } };
+window = { addEventListener: function () { } };
 
 /**
  * node-canvas doesn't support cloneNode();
@@ -45,8 +45,8 @@ window = { addEventListener:function () { } };
  *
  * @return {Canvas}
  */
-Canvas.prototype.cloneNode = function () {
-	var c = new Canvas(this.width, this.height);
+Canvas.Canvas.prototype.cloneNode = function () {
+	var c = Canvas.createCanvas(this.width, this.height);
 	c.type = this.type;
 
 	return c;
@@ -57,14 +57,14 @@ HTMLCanvasElement = Canvas;
 
 // Create our global createjs namespace.
 createjs = {
-	_snapToPixelEnabled:true,
+	_snapToPixelEnabled: true,
 
-	createCanvas:function () {
-		return new Canvas();
+	createCanvas: function () {
+		return Canvas.createCanvas();
 	},
 
-	createImage:function () {
-		return new Image();
+	createImage: function () {
+		return new Canvas.Image();
 	}
 };
 
@@ -133,7 +133,7 @@ for (var i = 0; i < classes.length; i++) {
  * Should only be called when your ready to stop the node instance.
  *
  */
-createjs.Ticker.halt = function() {
+createjs.Ticker.halt = function () {
 	if (createjs.Ticker.timeoutID !== null) {
 		clearTimeout(createjs.Ticker.timeoutID);
 	}

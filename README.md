@@ -30,7 +30,7 @@ var Graphics = createjs.Graphics;
 var fs = require('fs');
 
 //Create the canvas to draw to
-var c = new Canvas(980, 580);
+var c = Canvas.createCanvas(980, 580);
 var ctx = c.getContext('2d');
 
 //Create graphics object
